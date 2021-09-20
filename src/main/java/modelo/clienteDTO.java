@@ -9,11 +9,11 @@ public class clienteDTO {
 	
 	public clienteDTO(int cedula_cliente, String direccion_cliente, String email_cliente, String nombre_cliente,
 			String telefono_cliente) {
-		cedula_cliente = cedula_cliente;
-		direccion_cliente = direccion_cliente;
-		email_cliente = email_cliente;
-		nombre_cliente = nombre_cliente;
-		telefono_cliente = telefono_cliente;
+		this.cedula_cliente = cedula_cliente;
+		this.direccion_cliente = direccion_cliente;
+		this.email_cliente = email_cliente;
+		this.nombre_cliente = nombre_cliente;
+		this.telefono_cliente = telefono_cliente;
 	}
 
 	public int getCedula_cliente() {
