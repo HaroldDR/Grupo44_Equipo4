@@ -12,7 +12,7 @@ String direccion_cliente="", email_cliente="", nombre_cliente="", telefono_clien
 int cedula_cliente=0;
 %>
 <%
-if(Integer.parseInt(request.getParameter("cedula_cliente"))!=null){
+if(request.getParameter("cedula_cliente")!=null){
 	cedula_cliente=Integer.parseInt(request.getParameter("cedula_cliente"));
 	direccion_cliente=request.getParameter("direccion_cliente");
 	email_cliente=request.getParameter("email_cliente");

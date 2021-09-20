@@ -12,7 +12,7 @@ String email_usuario="", nombre_usuario="", password="", usuario="", estado="";
 int cedula_usuario=0;
 %>
 <%
-if(Integer.parseInt(request.getParameter("cedula_usuario"))!=null){
+if(request.getParameter("cedula_usuario")!=null){
 	cedula_usuario=Integer.parseInt(request.getParameter("cedula_usuario"));
 	email_usuario=request.getParameter("email_usuario");
 	nombre_usuario=request.getParameter("nombre_usuario");
