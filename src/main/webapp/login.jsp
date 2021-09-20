@@ -9,7 +9,7 @@
 <body>
 	<header class="registro">
 		<h1>Bienvenidos a la Tienda Generica</h1>
-		<form action="Interfaz" method="POST">
+		<form action="validar" method="POST">
 			<div><input class="boxes" type="text" name="usuario" placeholder="Ingrese su usuario" required></div>
 			<div><input class="boxes" type="password" name="password"placeholder="Ingrese su contrasena"  required></div>
 			<div><input class="botones"type="submit" name="enviar" value="Enviar">
