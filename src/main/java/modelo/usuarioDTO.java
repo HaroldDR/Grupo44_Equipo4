@@ -7,11 +7,11 @@ public class usuarioDTO {
 	private String password;
 	private String usuario;
 	
-	public usuarioDTO(int cedula_usuario, String email_cliente, String nombre_cliente, String password,
+	public usuarioDTO(int cedula_usuario, String email_usuario, String nombre_usuario, String password,
 			String usuario) {
 		this.cedula_usuario = cedula_usuario;
-		this.email_usuario = email_cliente;
-		this.nombre_usuario = nombre_cliente;
+		this.email_usuario = email_usuario;
+		this.nombre_usuario = nombre_usuario;
 		this.password = password;
 		this.usuario = usuario;
 	}
