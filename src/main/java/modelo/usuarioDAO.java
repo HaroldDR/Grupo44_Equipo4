@@ -44,7 +44,12 @@ public class usuarioDAO {
 			ps.setInt(1, cedula_usuario);
 			res=ps.executeQuery();
 			while(res.next()) {
-				usu=new usuarioDTO(res.getInt(1),res.getString(2),res.getNString(3),res.getString(4),res.getString(5));
+				usu=new usuarioDTO(res.getInt(1),res.getString(2),res.getString(3),res.getString(4),res.getString(5));
+				ps.setInt(1, usu.getCedula_usuario());
+				ps.setString(2, usu.getEmail_usuario());
+				ps.setString(3, usu.getNombre_usuario());
+				ps.setString(4, usu.getPassword());
+				ps.setString(5, usu.getUsuario());
 			}
 		}catch(SQLException ex) {
 			JOptionPane.showMessageDialog(null, "Eror al Consultar"+ex);

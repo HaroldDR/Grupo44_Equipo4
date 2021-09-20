@@ -22,7 +22,7 @@ if(request.getParameter("cedula_cliente")!=null){
 }
 %>
 <h1>Modulo de CLientes</h1>
-<form action="clientes" method="post">
+<form action="cliente" method="post">
 	<div><label>Cedula: </label><input type="number" name="cedula_cliente" value="<%=cedula_cliente%>" <%=estado%> required></div>
 	<input type="hidden" name="ced" value="<%=cedula_cliente%>">
 	<div><label>Direccion: </label><input type="text" name="direccion_cliente" value="<%=direccion_cliente%>" required></div>
@@ -36,7 +36,7 @@ if(request.getParameter("cedula_cliente")!=null){
 	</div>
 </form>
 <hr>
-<form action="clientes" method="post">
+<form action="cliente" method="post">
 	<fieldset>
 		<legend>Consultar</legend>
 		<div>
