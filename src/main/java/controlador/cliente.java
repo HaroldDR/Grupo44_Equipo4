@@ -31,10 +31,10 @@ public class cliente extends HttpServlet {
 			clienteDTO cli=new clienteDTO(cedula_cliente,direccion_cliente,email_cliente,nombre_cliente,telefono_cliente);
 			if(clidao.Ingresar_cliente(cli)) {
 				JOptionPane.showMessageDialog(null, "se registro el cliente");
-				response.sendRedirect("libros.jsp?men=se registro el cliente");
+				response.sendRedirect("cliente.jsp?men=se registro el cliente");
 			}else {
 				JOptionPane.showMessageDialog(null, "No se regitro el cliente");
-				response.sendRedirect("libros.jsp?men=No se regitro el cliente");
+				response.sendRedirect("cliente.jsp?men=No se regitro el cliente");
 			}
 		}
 		
@@ -48,7 +48,7 @@ public class cliente extends HttpServlet {
 				email_cliente=cli.getEmail_cliente();
 				nombre_cliente=cli.getNombre_cliente();
 				telefono_cliente=cli.getTelefono_cliente();
-				response.sendRedirect("libros.jsp?cdula_cliente="+cedula_cliente+"&&direccion_cliente="+direccion_cliente+"&&email_cliente="+email_cliente+"&&nombre_cliente="+nombre_cliente+"&&telefono_cliente="+telefono_cliente);
+				response.sendRedirect("cliente.jsp?cedula_cliente="+cedula_cliente+"&&direccion_cliente="+direccion_cliente+"&&email_cliente="+email_cliente+"&&nombre_cliente="+nombre_cliente+"&&telefono_cliente="+telefono_cliente);
 			}else {
 				JOptionPane.showMessageDialog(null, "El cliente no existe");
 				response.sendRedirect("cliente.jsp");
@@ -61,7 +61,7 @@ public class cliente extends HttpServlet {
 			cedula_cliente=Integer.parseInt(request.getParameter("ced"));
 			direccion_cliente=request.getParameter("direccion_cliente");
 			email_cliente=request.getParameter("email_cliente");
-			nombre_cliente=request.getParameter("_cliente");
+			nombre_cliente=request.getParameter("nombre_cliente");
 			telefono_cliente=request.getParameter("telefono_cliente");
 			clienteDTO cli=new clienteDTO(cedula_cliente,direccion_cliente,email_cliente,nombre_cliente,telefono_cliente);
 			if(clidao.Actualizar_cliente(cli)) {
@@ -69,7 +69,7 @@ public class cliente extends HttpServlet {
 				response.sendRedirect("cliente.jsp?men=se actualizo el cliente");
 			}else {
 				JOptionPane.showMessageDialog(null, "no se actualizo el cliente");
-				response.sendRedirect("libros.jsp?men=no se actualizo el cliente");
+				response.sendRedirect("cliente.jsp?men=no se actualizo el cliente");
 			}
 		}
 		
@@ -79,9 +79,9 @@ public class cliente extends HttpServlet {
 			int op=JOptionPane.showConfirmDialog(null, "Desea eliminar el CLiente"+cedula_cliente);
 			if(op==0) {
 				if(clidao.Eliminar_cliente(cedula_cliente)) {
-					response.sendRedirect("cliente.jsp?man=Cliente eliminado");
+					response.sendRedirect("cliente.jsp?men=Cliente eliminado");
 				}else {
-					response.sendRedirect("cliente.jsp?man=Cliente no eliminado");
+					response.sendRedirect("cliente.jsp?men=Cliente no eliminado");
 				}
 			}else {
 				response.sendRedirect("cliente.jsp");
