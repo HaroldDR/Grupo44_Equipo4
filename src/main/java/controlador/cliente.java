@@ -10,11 +10,11 @@ import javax.swing.JOptionPane;
 import modelo.clienteDAO;
 import modelo.clienteDTO;
 
-@WebServlet("/clientes")
-public class clientes extends HttpServlet {
+@WebServlet("/cliente")
+public class cliente extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-	public clientes() {
+	public cliente() {
         super();
     }
 
