@@ -1,16 +1,22 @@
 package controlador;
 
+import java.io.File;
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.Part;
 import javax.swing.JOptionPane;
 import modelo.usuarioDAO;
 import modelo.usuarioDTO;
 
 @WebServlet("/usuario")
+@MultipartConfig
 public class usuario extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
@@ -39,16 +45,17 @@ public class usuario extends HttpServlet {
 		}
 		
 		if(request.getParameter("consultar")!=null) {
-			int cedula_usuario=Integer.parseInt(request.getParameter("cedula_usuario"));
+			int cedula_usuario = Integer.parseInt(request.getParameter("cedula_usuario"));
 			usuarioDTO usu=usudao.Buscar_usuario(cedula_usuario);
 			if(usu!=null) {
 				String email_usuario, nombre_usuario, password, usuario;
+				//int cedula_usuario;
 				cedula_usuario=usu.getCedula_usuario();
 				email_usuario=usu.getEmail_usuario();
 				nombre_usuario=usu.getNombre_usuario();
 				password=usu.getPassword();
 				usuario=usu.getUsuario();
-				response.sendRedirect("usuario.jsp?cdula_usuario="+cedula_usuario+"&&email_cliente="+email_usuario+"&&nombre_cliente="+nombre_usuario+"&&password="+password+"&&usuario="+usuario);
+				response.sendRedirect("usuario.jsp?cedula_usuario="+cedula_usuario+"&&email_usuario="+email_usuario+"&&nombre_usuario="+nombre_usuario+"&&password="+password+"&&usuario="+usuario);
 			}else {
 				JOptionPane.showMessageDialog(null, "El usuario no existe");
 				response.sendRedirect("usuario.jsp");
@@ -81,7 +88,7 @@ public class usuario extends HttpServlet {
 				if(usudao.Eliminar_usuario(cedula_usuario)) {
 					response.sendRedirect("usuario.jsp?men=Usuario eliminado");
 				}else {
-					response.sendRedirect("usuario.jsp?men=Usuarioliente no eliminado");
+					response.sendRedirect("usuario.jsp?men=Usuario no eliminado");
 				}
 			}else {
 				response.sendRedirect("usuario.jsp");
