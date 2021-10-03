@@ -15,10 +15,10 @@ public class proveedorDAO {
 	
 	public boolean Insertar_proveedor(proveedorDTO pro) {
 		boolean resul=false;
-		proveedorDTO proEx=null;
+		proveedorDTO proex=null;
 		try {
-			proEx=Buscar_proveedor(pro.getNitproveedor());
-			if(proEx==null) {
+			proex=Buscar_proveedor(pro.getNitproveedor());
+			if(proex==null) {
 				String sql="insert into proveedores value(?,?,?,?,?)";
 				ps=conec.prepareStatement(sql);
 				ps.setInt(1, pro.getNitproveedor());
