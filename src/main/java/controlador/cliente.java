@@ -27,7 +27,7 @@ public class cliente extends HttpServlet {
 			direccion_cliente=request.getParameter("direccion_cliente");
 			email_cliente=request.getParameter("email_cliente");
 			nombre_cliente=request.getParameter("nombre_cliente");
-			telefono_cliente=request.getParameter("telfono_cliente");
+			telefono_cliente=request.getParameter("telefono_cliente");
 			clienteDTO cli=new clienteDTO(cedula_cliente,direccion_cliente,email_cliente,nombre_cliente,telefono_cliente);
 			if(clidao.Ingresar_cliente(cli)) {
 				JOptionPane.showMessageDialog(null, "se registro el cliente");

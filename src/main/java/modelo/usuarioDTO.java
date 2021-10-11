@@ -55,5 +55,4 @@ public class usuarioDTO {
 	public void setUsuario(String usuario) {
 		this.usuario = usuario;
 	}
-	
 }

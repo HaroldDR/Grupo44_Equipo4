@@ -8,14 +8,14 @@
 </head>
 <body>
 <%!
-String ciudad_proveedor="", direcion_proveeor="", nombre_proveedor="", telefono_proveedor="", estado="";
+String ciudad_proveedor="", direccion_proveedor="", nombre_proveedor="", telefono_proveedor="", estado="";
 int nitproveedor=0;
 %>
 <%
 if(request.getParameter("nitproveedor")!=null){
 	nitproveedor=Integer.parseInt(request.getParameter("nitproveedor"));
 	ciudad_proveedor=request.getParameter("ciudad_proveedor");
-	direcion_proveeor=request.getParameter("direcion_proveeor");
+	direccion_proveedor=request.getParameter("direccion_proveedor");
 	nombre_proveedor=request.getParameter("nombre_proveedor");
 	telefono_proveedor=request.getParameter("telefono_proveedor");
 	estado="disable";
@@ -24,19 +24,19 @@ if(request.getParameter("nitproveedor")!=null){
 <h1>Modulo de Proveedor</h1>
 <form action="proveedor" method="post">
 	<div><label>NIT: </label><input type="number" name="nitproveedor" value="<%=nitproveedor%>" <%=estado%> required></div>
-	<input type="hidden" name="nit" value="<%=nitproveedor%>">
+	<input type="hidden" name="nitproveedor" value="<%=nitproveedor%>">
 	<div><label>Ciudad: </label><input type="text" name="ciudad_proveedor" value="<%=ciudad_proveedor%>" required></div>
-	<div><label>Direccion: </label><input type="text" name="direcion_proveeor" value="<%=direcion_proveeor%>" required></div>
+	<div><label>Direccion: </label><input type="text" name="direccion_proveedor" value="<%=direccion_proveedor%>" required></div>
 	<div><label>Nombre: </label><input type="text" name="nombre_proveedor" value="<%=nombre_proveedor%>" required></div>
 	<div><label>Telefono: </label><input type="text" name="telefono_proveedor" value="<%=telefono_proveedor%>" required></div>
 	<div>
-		<input type="submit" name="ingresar" value="ingresar">
+		<input type="submit" name="insertar" value="ingresar">
 		<input type="submit" name="actualizar" value="actualizar">
 		<input type="submit" name="eliminar" value="eliminar">
 	</div>
 </form>
 <hr>
-<form action="usuario" method="post">
+<form action="proveedor" method="post">
 	<fieldset>
 		<legend>Consultar</legend>
 		<div>

@@ -17,7 +17,7 @@ public class clienteDAO {
 		boolean resul=false;
 		clienteDTO cliex=null;
 		try {
-			Buscar_cliente(cli.getCedula_cliente());
+			cliex=Buscar_cliente(cli.getCedula_cliente());
 			if(cliex==null) {
 				String sql="insert into clientes value(?,?,?,?,?)";
 				ps=conec.prepareStatement(sql);
@@ -45,11 +45,6 @@ public class clienteDAO {
 			res=ps.executeQuery();
 			while(res.next()) {
 				cli=new clienteDTO(res.getInt(1),res.getString(2),res.getString(3),res.getString(4),res.getString(5));
-				ps.setInt(1, cli.getCedula_cliente());
-				ps.setString(2, cli.getDireccion_cliente());
-				ps.setString(3, cli.getEmail_cliente());
-				ps.setString(4, cli.getNombre_cliente());
-				ps.setString(5, cli.getTelefono_cliente());
 			}
 		}catch(SQLException ex) {
 			JOptionPane.showMessageDialog(null, "Eror al Consultar"+ex);

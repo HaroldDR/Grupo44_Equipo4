@@ -15,9 +15,9 @@
 					<li><a href="usuario.jsp">Usuarios</a></li>
 					<li><a href="cliente.jsp">Clientes</a></li>
 					<li><a href="proveedor.jsp">Proveedore</a></li>
-					<li><a href="producto">Productos</a></li>
+					<li><a href="producto.jsp">Productos</a></li>
 					<li><a href="venta.jsp">Ventas</a></li>
-					<li><a href="reporte.jsp">Reportes</a></li>
+					<li><a href="reportes.jsp">Reportes</a></li>
 				</ul>
 			</nav>
 		</div>

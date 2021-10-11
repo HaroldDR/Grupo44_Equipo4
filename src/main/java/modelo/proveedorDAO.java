@@ -39,7 +39,7 @@ public class proveedorDAO {
 	public proveedorDTO Buscar_proveedor(int nitproveedor) {
 		proveedorDTO pro=null;
 		try {
-			String sql="slect from proveedores where nitproveedor=?";
+			String sql="select * from proveedores where nitproveedor=?";
 			ps=conec.prepareStatement(sql);
 			ps.setInt(1, nitproveedor);
 			res=ps.executeQuery();
